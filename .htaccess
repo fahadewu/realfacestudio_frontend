@@ -1,0 +1,13 @@
+Options -MultiViews
+RewriteEngine On
+RewriteBase /
+
+# Redirect to trailing slash if it's a directory but missing slash
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.*[^/])$ $1/ [L,R=301]
+
+# Serve index.html for directories
+DirectoryIndex index.html
+
+# Custom 404
+ErrorDocument 404 /404.html
